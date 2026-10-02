@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="ゲームプログラマー浅川咲人のポートフォリオ。自作DirectX 12エンジンによるGIGA Survivorと、ゲーム体験を支えるUI・最適化設計を紹介します。">
+	<meta name="theme-color" content="#080b12">
+	<title>浅川 咲人 | Game Programmer Portfolio</title>
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080b12'/%3E%3Cpath d='M14 47 29 14h7l14 33h-9l-3-8H26l-3 8Zm15-15h7l-3.5-10Z' fill='%2378f7d4'/%3E%3C/svg%3E">
+	<link rel="stylesheet" href="./styles.css">
+	<script src="./script.js" defer></script>
+</head>
+<body>
+	<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+	<header class="site-header" data-header>
+		<a class="brand" href="#top" aria-label="ページ上部へ">
+			<span class="brand-mark">AS</span>
+			<span class="brand-name">SAKUTO ASAKAWA</span>
+		</a>
+		<button class="menu-button" type="button" aria-expanded="false" aria-controls="global-nav" data-menu-button>
+			<span></span><span></span>
+			<span class="sr-only">メニューを開く</span>
+		</button>
+		<nav class="global-nav" id="global-nav" aria-label="メインナビゲーション" data-nav>
+			<a href="#project">作品</a>
+			<a href="#experience">体験設計</a>
+			<a href="#engineering">技術</a>
+			<a href="#works">制作実績</a>
+			<a href="#profile">プロフィール</a>
+		</nav>
+		<a class="header-link" href="https://github.com/AsakawaSakuto/MadoEngine" target="_blank" rel="noreferrer">GitHub</a>
+	</header>
+
+	<main>
+		<section class="hero" id="top" aria-labelledby="hero-title">
+			<div class="hero-grid"></div>
+			<div class="hero-copy reveal">
+				<p class="eyebrow"><span></span> GAME PROGRAMMER / PORTFOLIO 2026</p>
+				<h1 id="hero-title">気持ちよさを、<br><em>技術で設計する。</em></h1>
+				<p class="hero-lead">大量の敵をなぎ倒す爽快感。迷わず理解できるUI。遊びの手触りを支える描画と最適化。自作エンジンからゲーム体験まで、一つずつ組み立てています。</p>
+				<div class="hero-actions">
+					<a class="button button-primary" href="#project">GIGA Survivorを見る</a>
+					<a class="button button-quiet" href="./portfolio-assets/documents/technical-notes.pdf" target="_blank">技術資料を読む</a>
+				</div>
+				<ul class="tech-list" aria-label="主要技術">
+					<li>C++</li>
+					<li>HLSL</li>
+					<li>DirectX 12</li>
+					<li>自作エンジン</li>
+				</ul>
+			</div>
+
+			<div class="hero-visual reveal" data-delay="1">
+				<div class="hero-frame">
+					<img src="./portfolio-assets/images/hero.png" alt="大量の敵に囲まれたGIGA Survivorのゲーム画面" width="960" height="540">
+					<div class="frame-chrome"><span>GIGA_SURVIVOR.exe</span><span>DX12 / DEBUG</span></div>
+					<div class="performance-card">
+						<span class="performance-label">Collision candidates</span>
+						<strong><s>40,000</s> <b>400</b></strong>
+						<span>Static BVHによる約99%削減</span>
+					</div>
+				</div>
+			</div>
+
+			<a class="scroll-cue" href="#project" aria-label="作品概要へ移動"><span></span>SCROLL</a>
+		</section>
+
+		<section class="signal-strip" aria-label="ポートフォリオ概要">
+			<div><span>01</span><strong>個人開発</strong><small>企画・実装・演出</small></div>
+			<div><span>02</span><strong>14作品</strong><small>個人・チーム制作</small></div>
+			<div><span>03</span><strong>UI × 技術</strong><small>遊びやすさを設計</small></div>
+			<div><span>04</span><strong>DirectX 12</strong><small>自作ゲームエンジン</small></div>
+		</section>
+
+		<section class="section project-section" id="project" aria-labelledby="project-title">
+			<div class="section-heading reveal">
+				<p class="section-index">01 / FEATURED PROJECT</p>
+				<h2 id="project-title">GIGA Survivor</h2>
+				<p>大量の敵を倒しながら成長していく、個人制作の3Dローグライク。繰り返し遊びたくなる「爽快感のあるゲーム体験」を目標に開発しています。</p>
+			</div>
+
+			<div class="project-layout">
+				<button class="media-card media-card-large reveal" type="button" data-image="./portfolio-assets/images/game-overview.png" data-alt="GIGA Survivorの作品概要">
+					<img src="./portfolio-assets/images/game-overview.png" alt="GIGA Survivorの作品概要とゲーム画面" width="960" height="540" loading="lazy">
+					<span class="media-action">画像を拡大</span>
+				</button>
+
+				<div class="project-facts reveal" data-delay="1">
+					<div class="fact"><span>GENRE</span><strong>3Dローグライク</strong></div>
+					<div class="fact"><span>TEAM</span><strong>個人制作</strong></div>
+					<div class="fact"><span>PERIOD</span><strong>2026.06 - 現在</strong></div>
+					<div class="fact"><span>ENGINE</span><strong>自作エンジン</strong></div>
+					<p class="project-note">フィールドを埋め尽くす敵、派手なダメージ表示、アイテムが大量に落ちる達成感。処理負荷と向き合いながら、画面の密度そのものを遊びの価値へ変えています。</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section experience-section" id="experience" aria-labelledby="experience-title">
+			<div class="section-heading split-heading reveal">
+				<div>
+					<p class="section-index">02 / GAME FEEL</p>
+					<h2 id="experience-title">伝わる。動く。<br>気持ちよくなる。</h2>
+				</div>
+				<p>ゲームらしさは、入力に対する小さな反応の積み重ね。見た瞬間に意味が伝わり、操作した瞬間に手応えが返るよう、UIとアニメーションを調整しています。</p>
+			</div>
+
+			<div class="experience-grid">
+				<article class="experience-card reveal">
+					<button class="card-image" type="button" data-image="./portfolio-assets/images/ui-rarity.png" data-alt="レアリティごとに色を変えた選択肢UIの改善前後">
+						<img src="./portfolio-assets/images/ui-rarity.png" alt="選択肢UIの改善前後" width="960" height="540" loading="lazy">
+					</button>
+					<div class="card-body">
+						<span class="card-number">01</span>
+						<h3>色で判断できる選択UI</h3>
+						<p>枠だけでなくUI全体をレアリティ色へ寄せ、選択肢の価値を一目で把握できる構成へ改善。</p>
+					</div>
+				</article>
+
+				<article class="experience-card reveal" data-delay="1">
+					<button class="card-image" type="button" data-image="./portfolio-assets/images/ui-weapon.png" data-alt="クールタイムと攻撃のタイミングを動きで示す武器UI">
+						<img src="./portfolio-assets/images/ui-weapon.png" alt="動きで状態を伝える武器UI" width="960" height="540" loading="lazy">
+					</button>
+					<div class="card-body">
+						<span class="card-number">02</span>
+						<h3>攻撃のリズムを見せる</h3>
+						<p>背景画像の上昇でクールタイムを可視化し、攻撃時にはUIを拡大。画面の隅から戦闘のテンポを演出。</p>
+					</div>
+				</article>
+
+				<article class="experience-card reveal" data-delay="2">
+					<button class="card-image" type="button" data-image="./portfolio-assets/images/landing-marker.png" data-alt="空中のプレイヤーと着地点マーカー">
+						<img src="./portfolio-assets/images/landing-marker.png" alt="着地点を立体的に示すマーカー" width="960" height="540" loading="lazy">
+					</button>
+					<div class="card-body">
+						<span class="card-number">03</span>
+						<h3>空中でも位置を見失わない</h3>
+						<p>真下の影ではモデルが平面的に見える課題に対し、立体的な着地点マーカーで距離感と視認性を両立。</p>
+					</div>
+				</article>
+			</div>
+
+			<div class="design-principles reveal">
+				<span>DESIGN PRINCIPLES</span>
+				<ul>
+					<li>UIに動きを持たせ、画面を盛り上げる</li>
+					<li>遊び手が感じる分かりづらさや不快感を取り除く</li>
+					<li>アニメーションを利用し、意図を大きく伝える</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="section engineering-section" id="engineering" aria-labelledby="engineering-title">
+			<div class="section-heading split-heading reveal">
+				<div>
+					<p class="section-index">03 / ENGINEERING CASE</p>
+					<h2 id="engineering-title">Static BVHで、<br>爽快感を守る。</h2>
+				</div>
+				<p>大量の敵を出すというゲーム体験の目標から、衝突判定のボトルネックを特定。地形が静的であることに着目し、必要十分な仕組みへ問題を単純化しました。</p>
+			</div>
+
+			<div class="case-flow">
+				<article class="case-step reveal">
+					<div class="step-label"><span>STEP 01</span><strong>課題</strong></div>
+					<div class="step-content">
+						<h3>総当たり判定が敵の数とともに増加</h3>
+						<p>20 × 20のマップブロックと敵100体を判定し、組み合わせは1フレームあたり40,000回。DebugビルドではFPSが大きく低下しました。</p>
+					</div>
+					<button class="step-image" type="button" data-image="./portfolio-assets/images/collision-problem.png" data-alt="総当たり衝突判定の問題説明">
+						<img src="./portfolio-assets/images/collision-problem.png" alt="総当たり判定による負荷の説明" width="960" height="540" loading="lazy">
+					</button>
+				</article>
+
+				<article class="case-step reveal">
+					<div class="step-label"><span>STEP 02</span><strong>選定</strong></div>
+					<div class="step-content">
+						<h3>動かない地形にStatic BVHを採用</h3>
+						<p>K-d Tree、Dynamic BVH、Static BVHを比較。地形のAABBは初期化後に動かないため、木の更新を持たないStatic BVHが目的と実装範囲に最適と判断しました。</p>
+					</div>
+					<button class="step-image" type="button" data-image="./portfolio-assets/images/bvh-compare.png" data-alt="空間分割法の比較">
+						<img src="./portfolio-assets/images/bvh-compare.png" alt="K-d TreeとBVHの比較" width="960" height="540" loading="lazy">
+					</button>
+				</article>
+
+				<article class="case-step reveal">
+					<div class="step-label"><span>STEP 03</span><strong>実装</strong></div>
+					<div class="step-content">
+						<h3>交差しない枝を早期に除外</h3>
+						<p>マップ生成時にAABBを登録し、ゲーム開始時に木を一度だけ構築。毎フレームの探索では交差しないノード以下を省き、詳細判定の候補だけを返します。</p>
+					</div>
+					<button class="step-image" type="button" data-image="./portfolio-assets/images/bvh-pipeline.png" data-alt="マップ登録から詳細判定までのパイプライン">
+						<img src="./portfolio-assets/images/bvh-pipeline.png" alt="Static BVHを用いた衝突判定パイプライン" width="960" height="540" loading="lazy">
+					</button>
+				</article>
+			</div>
+
+			<div class="result-panel reveal">
+				<div class="result-copy">
+					<p class="section-index">MEASURED RESULT / DEBUG BUILD</p>
+					<h3>候補数を約99%削減。<br>FPSは17から42へ。</h3>
+					<p>最適化は数字を改善するためだけではなく、大量の敵・エフェクト・ドロップアイテムを同時に見せる体験へ直結しています。</p>
+					<div class="result-metrics">
+						<div><span>判定候補数</span><strong>40,000 <i>→</i> 400</strong></div>
+						<div><span>フレームレート</span><strong>17 <i>→</i> 42 <small>FPS</small></strong></div>
+					</div>
+				</div>
+				<button class="result-image" type="button" data-image="./portfolio-assets/images/bvh-result.png" data-alt="Static BVH適用前後の検証結果">
+					<img src="./portfolio-assets/images/bvh-result.png" alt="Static BVHの適用前後を比較した検証結果" width="960" height="540" loading="lazy">
+				</button>
+			</div>
+		</section>
+
+		<section class="section works-section" id="works" aria-labelledby="works-title">
+			<div class="section-heading reveal">
+				<p class="section-index">04 / SELECTED WORKS</p>
+				<h2 id="works-title">制作実績</h2>
+				<p>個人制作から自作エンジンを使ったチーム制作まで、役割を広げながら取り組んできました。</p>
+			</div>
+
+			<div class="works-grid">
+				<article class="work-card reveal">
+					<button type="button" data-image="./portfolio-assets/images/program-repair.png" data-alt="Program Repairの作品紹介">
+						<img src="./portfolio-assets/images/program-repair.png" alt="Program Repairのゲーム画面" width="960" height="540" loading="lazy">
+					</button>
+					<div><span>1年次 / 個人制作 / 1か月</span><h3>Program Repair</h3><p>初めて制作したゲーム。企画から実装まで、すべてを担当。</p></div>
+				</article>
+				<article class="work-card reveal" data-delay="1">
+					<button type="button" data-image="./portfolio-assets/images/kumacider.png" data-alt="おかしあつめてクマサイダーの作品紹介">
+						<img src="./portfolio-assets/images/kumacider.png" alt="おかしあつめてクマサイダーのゲーム画面" width="960" height="540" loading="lazy">
+					</button>
+					<div><span>2年次 / チーム制作 / 12位・81作品</span><h3>おかしあつめて<br>クマサイダー</h3><p>自作エンジンの提供、エフェクト、タイトル・リザルトシーンを担当。</p></div>
+				</article>
+				<article class="work-card reveal" data-delay="2">
+					<button type="button" data-image="./portfolio-assets/images/culbom.png" data-alt="CULBOMの作品紹介">
+						<img src="./portfolio-assets/images/culbom.png" alt="CULBOMのゲーム画面" width="960" height="540" loading="lazy">
+					</button>
+					<div><span>2年次 / チーム制作 / 8位・78作品</span><h3>CULBOM</h3><p>ゲームシーン全般、BPMシステム、演出、エフェクトを担当。</p></div>
+				</article>
+			</div>
+		</section>
+
+		<section class="section profile-section" id="profile" aria-labelledby="profile-title">
+			<div class="profile-layout">
+				<div class="profile-copy reveal">
+					<p class="section-index">05 / ABOUT</p>
+					<p class="profile-kicker">GAME PROGRAMMER</p>
+					<h2 id="profile-title">浅川 咲人<span>SAKUTO ASAKAWA</span></h2>
+					<p class="profile-lead">アプリケーション開発、エフェクト制作、そして「ゲームらしさ」を作ることが得意です。遊ぶ人が感じる小さな違和感を拾い、技術と演出の両面から改善します。</p>
+					<div class="skills">
+						<div><span>LANGUAGE</span><p>C++ / C# / HLSL</p></div>
+						<div><span>GRAPHICS</span><p>DirectX 12 / ImGui</p></div>
+						<div><span>TOOLS</span><p>Visual Studio / GitHub / Blender / FireAlpaca</p></div>
+						<div><span>INTERESTS</span><p>カラオケ / グルメ / ボードゲーム</p></div>
+					</div>
+					<a class="button button-primary" href="https://github.com/AsakawaSakuto" target="_blank" rel="noreferrer">GitHubプロフィール</a>
+				</div>
+
+				<div class="document-panel reveal" data-delay="1">
+					<p>DOCUMENTS</p>
+					<a href="./portfolio-assets/documents/portfolio.pdf" target="_blank">
+						<span>01</span><strong>ポートフォリオ</strong><small>作品・制作実績</small>
+					</a>
+					<a href="./portfolio-assets/documents/technical-notes.pdf" target="_blank">
+						<span>02</span><strong>プログラム説明資料</strong><small>Static BVHによる軽量化</small>
+					</a>
+					<p class="document-note">PDF形式で詳しい資料をご覧いただけます。</p>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div><span class="brand-mark">AS</span><p>SAKUTO ASAKAWA<br>GAME PROGRAMMER PORTFOLIO</p></div>
+		<a href="#top">ページ上部へ</a>
+	</footer>
+
+	<dialog class="image-dialog" data-dialog>
+		<button class="dialog-close" type="button" aria-label="拡大画像を閉じる" data-dialog-close>×</button>
+		<img src="" alt="" data-dialog-image>
+	</dialog>
+</body>
+</html>
