@@ -765,9 +765,10 @@ img {
 
 .result-copy h3 {
 	margin: 0;
-	font-size: clamp(1.8rem, 3.4vw, 3.2rem);
+	font-size: clamp(1.8rem, 3.1vw, 2.65rem);
 	line-height: 1.25;
 	letter-spacing: -0.03em;
+	white-space: nowrap;
 }
 
 .result-copy > p:not(.section-index) {
@@ -798,7 +799,8 @@ img {
 	margin-top: 4px;
 	color: var(--mint);
 	font-family: Consolas, "Courier New", monospace;
-	font-size: clamp(1.25rem, 2.3vw, 2rem);
+	font-size: clamp(1.2rem, 2vw, 1.7rem);
+	white-space: nowrap;
 }
 
 .result-metrics i {
@@ -1318,6 +1320,10 @@ img {
 	.result-metrics,
 	.skills {
 		grid-template-columns: 1fr;
+	}
+
+	.result-copy h3 {
+		font-size: clamp(1.35rem, 7vw, 1.8rem);
 	}
 
 	.document-panel {
